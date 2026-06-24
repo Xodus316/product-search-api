@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.portfolio.productsearchapi.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import com.portfolio.productsearchapi.model.Product;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/api/products")
@@ -21,4 +24,10 @@ public class ProductController {
     public List<Product> getProducts(@RequestParam(required = false) String query) {
         return productService.searchProducts(query);
     }
+
+    @PostMapping
+    public Product addProduct(@RequestBody Product product) {
+        return productService.addProduct(product);
+    }
+    
 }

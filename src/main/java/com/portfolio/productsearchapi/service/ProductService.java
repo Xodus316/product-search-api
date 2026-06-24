@@ -25,6 +25,10 @@ public class ProductService {
         return productRepository.findByNameContainingIgnoreCaseOrManufacturerContainingIgnoreCase(query, query);
     }
 
+    public Product addProduct(Product product) {
+        return productRepository.save(product);
+    }
+
     /**
      * Seeds the MongoDB database with mock products if it's empty. This method is called after the bean's properties have been set.
      */
