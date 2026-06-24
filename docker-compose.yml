@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: product-mongo-db
+    ports:
+      - "27017:27017" 
+    volumes:
+      - mongodb_data:/data/db # Ensures data survives if the container restarts
+    environment:
+      # Optional: Add simple auth if you want, but for local dev this is fine
+      MONGO_INITDB_DATABASE: productdb
+
+volumes:
+  mongodb_data:
