@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/api/products")
-@CrossOrigin(origins = "http://localhost:5174") // Allow requests from the React frontend
+@CrossOrigin(origins = "*") // Allow requests from the React frontend
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
