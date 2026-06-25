@@ -29,6 +29,10 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+    public Product getProductById(String id) {
+        return productRepository.findById(id).orElse(null);
+    }
+
     /**
      * Seeds the MongoDB database with mock products if it's empty. This method is called after the bean's properties have been set.
      */
